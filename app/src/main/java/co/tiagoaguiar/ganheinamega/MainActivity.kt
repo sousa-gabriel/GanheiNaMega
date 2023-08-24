@@ -38,8 +38,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun numberGenerator(text: String, txtResult: TextView) {
 
+        if (text.isEmpty()) {
+            Toast.makeText(this, "Informe um numero entre 6 e 15", Toast.LENGTH_LONG).show()
+            return
+        }
         val quantidade = text.toInt()
-        if (text.isEmpty() || quantidade<6 || quantidade >15) {
+
+        if (quantidade<6 || quantidade >15) {
             Toast.makeText(this, "Informe um numero entre 6 e 15", Toast.LENGTH_LONG).show()
             return
         }
